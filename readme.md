@@ -1,32 +1,30 @@
-# gulp-favicons [![Build Status](https://travis-ci.org/haydenbleasel/gulp-favicons.svg?branch=master)](https://travis-ci.org/haydenbleasel/gulp-favicons)
+# gulp-favicons
 
-Favicons generator for Gulp. Simple wrapper around [favicons](https://github.com/haydenbleasel/favicons). Installed through NPM with:
+Favicons generator for Gulp.
+
+**This is a modified fork from original package [gulp-favicons](https://github.com/haydenbleasel/gulp-favicons)**
+
+Simple wrapper around [favicons](https://github.com/haydenbleasel/favicons).
+
+To install run:
 
 ```
-npm install gulp-favicons --save-dev
+npm install git://github.com/katiaeirin/gulp-favicons --save
 ```
 
-Check out favicons for example options. Example usage:
+Example usage:
 
 ```
 gulp.task('default', function () {
-    gulp.src('index.html')
+    gulp.src('logo.png')
         .pipe(favicons({
-            files: { dest: 'images/' },
-            settings: { background: '#1d1d1d' }
-        }))
-        .pipe(gulp.dest('./'));
+            html: 'index.html',
+            dest: 'favicons',
+            iconsPath: 'favicons',
+            background: '#ffffff', 
+            logging: true,
+        }, function (code) {
+            console.log(code);
+        }));
 });
 ```
-
-If you don't specify some options, gulp-favicons checks your source HTML file for:
-
-```
-<title>...</title>
-<meta name="author" content="..." />
-<meta name="description" content="..." />
-<link rel="canonical" href="..." />
-<link rel="favicons" href="..." />
-```
-
-Note: `link[rel="favicons"]` is a custom tag designed for gulp-favicons. It will be removed upon processing.
