@@ -18,11 +18,11 @@ Example usage:
 gulp.task('default', function () {
     gulp.src('logo.png')
         .pipe(favicons({
-            html: 'index.html',
-            dest: 'favicons',
-            iconsPath: 'favicons',
-            background: '#ffffff', 
-            logging: true,
+            html: 'index.html',     // Path(s) for HTML file to write or append metadata. `string` or `array`
+            dest: 'favicons',       // Path for writing the favicons to. `string`
+            iconsPath: 'favicons',  // Path for overriding default icons path. `string`
+            background: '#ffffff',  // Background colour for flattened icons. `string`
+            logging: true,          // Print logs to console? `boolean`
         }, function (code) {
             console.log(code);
         }));
