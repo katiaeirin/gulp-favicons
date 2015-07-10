@@ -14,7 +14,7 @@ npm install git://github.com/katiaeirin/gulp-favicons --save
 
 Example usage:
 
-```
+```js
 gulp.task('default', function () {
     gulp.src('logo.png')
         .pipe(favicons({
