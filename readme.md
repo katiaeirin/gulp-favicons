@@ -2,13 +2,13 @@
 
 Favicons generator for Gulp. Simple wrapper around [favicons](https://github.com/haydenbleasel/favicons). Installed through NPM with:
 
-```
+```shell
 npm install gulp-favicons --save-dev
 ```
 
 Check out favicons for example options. Example usage:
 
-```
+```js
 gulp.task('default', function () {
     gulp.src('index.html')
         .pipe(favicons({
@@ -21,7 +21,7 @@ gulp.task('default', function () {
 
 If you don't specify some options, gulp-favicons checks your source HTML file for:
 
-```
+```html
 <title>...</title>
 <meta name="author" content="..." />
 <meta name="description" content="..." />
